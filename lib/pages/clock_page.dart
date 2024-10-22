@@ -47,9 +47,23 @@ class _ClockPageState extends State<ClockPage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const PageHeader(
-            image: 'assets/images/clock_icon.png',
-            title: 'Clock',
+          Row(
+            children: [
+              SizedBox(
+                width: 30,
+                height: 30,
+                child: Image.asset('assets/images/clock_icon.png'),
+              ),
+              const SizedBox(width: 10),
+              const Text(
+                "Clock",
+                style: TextStyle(
+                  fontSize: 22,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+            ],
           ),
           const SizedBox(height: 50),
           Flexible(
