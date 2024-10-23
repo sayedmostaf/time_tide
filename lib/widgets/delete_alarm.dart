@@ -1,6 +1,10 @@
+import 'dart:js_interop_unsafe';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:time_tide/constants/colors.dart';
+import 'package:time_tide/widgets/show_snack_bar.dart';
 
 deleteAlarm(BuildContext context, String id) {
   return showDialog(
@@ -74,7 +78,15 @@ deleteAlarm(BuildContext context, String id) {
                 ),
               ),
               onPressed: () {
-                // handle delete by firebase
+                try {
+                  FirebaseFirestore.instance
+                      .collection('alarm')
+                      .doc(id)
+                      .delete();
+                  showSnackBar(context, 'Alarm Deleted Successfully.');
+                } catch (e) {
+                  showSnackBar(context, e.toString());
+                }
                 Navigator.pop(context);
               },
             ),

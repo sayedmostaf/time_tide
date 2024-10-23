@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "804265617466",
+    "project_id": "timetide-70715",
+    "storage_bucket": "timetide-70715.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:804265617466:android:56fb724ca386f56d112d03",
+        "android_client_info": {
+          "package_name": "com.android.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmlrUxKkFwbcFxjQkO1AB57PofwTM653M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
