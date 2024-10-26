@@ -5,7 +5,7 @@ import 'package:time_tide/constants/colors.dart';
 import 'package:time_tide/widgets/add_alarm.dart';
 
 class AddAlarmButton extends StatelessWidget {
-  const AddAlarmButton({Key? key}) : super(key: key);
+  const AddAlarmButton({super.key});
 
   @override
 

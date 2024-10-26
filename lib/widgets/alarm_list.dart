@@ -14,7 +14,7 @@ class AlarmList extends StatelessWidget {
       stream: FirebaseFirestore.instance.collection('alarm').snapshots(),
       builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return LoadingView();
+          return const LoadingView();
         }
         if (snapshot.data!.docs.isEmpty) {
           return const NoAlarmView();

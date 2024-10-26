@@ -10,6 +10,7 @@ class StopWatchDisplay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoButton(
+      onPressed: onPressed,
       child: Container(
         alignment: Alignment.center,
         width: 250,
@@ -31,7 +32,6 @@ class StopWatchDisplay extends StatelessWidget {
           ),
         ),
       ),
-      onPressed: onPressed,
     );
   }
 }

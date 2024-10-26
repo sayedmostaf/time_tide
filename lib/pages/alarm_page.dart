@@ -15,7 +15,7 @@ class _AlarmPageState extends State<AlarmPage> {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(left: 32, right: 32, top: 64, bottom: 28),
-      child: Column(
+      child: const Column(
         children: [
           AlarmHeader(),
           Expanded(child: AlarmList()),

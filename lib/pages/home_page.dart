@@ -47,18 +47,16 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const SizedBox(width: 3),
-                ...menuItems
-                    .map(
-                      (e) => Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                        child: MenuButton(
-                          image: e.imageSource!,
-                          title: e.title!,
-                          currentMenuInfo: e,
-                        ),
-                      ),
-                    )
-                    .toList(),
+                ...menuItems.map(
+                  (e) => Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: MenuButton(
+                      image: e.imageSource!,
+                      title: e.title!,
+                      currentMenuInfo: e,
+                    ),
+                  ),
+                ),
               ],
             ),
           ),

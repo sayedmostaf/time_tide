@@ -16,7 +16,7 @@ class LoadingView extends StatelessWidget {
             strokeWidth: 6,
             valueColor: AlwaysStoppedAnimation<Color>(lightWhite),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Text(
@@ -26,9 +26,6 @@ class LoadingView extends StatelessWidget {
               fontSize: 24,
             ),
           ),
-          SizedBox(
-            height: MediaQuery.of(context).size.height / 3,
-          )
         ],
       ),
     );

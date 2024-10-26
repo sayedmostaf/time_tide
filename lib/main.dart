@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:time_tide/firebase_options.dart';
 import 'package:time_tide/models/menu_info.dart';
 import 'package:time_tide/models/menu_type.dart';
-import 'package:time_tide/pages/home_page.dart';
+import 'package:time_tide/pages/splash_page.dart';
 import 'package:time_tide/providers/timer_provider.dart';
 
 void main() async {
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(fontFamily: 'Garet'),
-        home: HomePage(),
+        home: const SplashPage(),
       ),
     );
   }

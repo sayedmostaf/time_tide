@@ -9,6 +9,7 @@ class ResetButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoButton(
+      onPressed: onPressed,
       child: Container(
         width: 80,
         height: 80,
@@ -23,7 +24,6 @@ class ResetButton extends StatelessWidget {
           color: lightWhite,
         ),
       ),
-      onPressed: onPressed,
     );
   }
 }

@@ -16,6 +16,7 @@ class TimerDisplay extends StatelessWidget {
       alignment: Alignment.center,
       children: [
         CupertinoButton(
+          onPressed: onTimeTap,
           child: SizedBox(
             width: 250,
             height: 250,
@@ -26,9 +27,9 @@ class TimerDisplay extends StatelessWidget {
               color: lightBlueishPurple,
             ),
           ),
-          onPressed: onTimeTap,
         ),
         CupertinoButton(
+          onPressed: onTimeTap,
           child: Text(
             _formatTime(remainingTime),
             style: TextStyle(
@@ -38,7 +39,6 @@ class TimerDisplay extends StatelessWidget {
               color: lightWhite,
             ),
           ),
-          onPressed: onTimeTap,
         ),
       ],
     );
