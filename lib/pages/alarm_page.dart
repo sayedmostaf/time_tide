@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:time_tide/widgets/add_alarm_button.dart';
 import 'package:time_tide/widgets/alarm_header.dart';
+import 'package:time_tide/widgets/alarm_list.dart';
 
 class AlarmPage extends StatefulWidget {
   const AlarmPage({super.key});
@@ -16,6 +18,8 @@ class _AlarmPageState extends State<AlarmPage> {
       child: Column(
         children: [
           AlarmHeader(),
+          Expanded(child: AlarmList()),
+          AddAlarmButton(),
         ],
       ),
     );

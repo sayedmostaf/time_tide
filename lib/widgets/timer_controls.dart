@@ -2,13 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:time_tide/constants/colors.dart';
 
 class TimerControls extends StatelessWidget {
-  const TimerControls(
-      {super.key,
-      required this.isRunning,
-      required this.onReset,
-      required this.onStartPause});
   final bool isRunning;
-  final VoidCallback onReset, onStartPause;
+  final VoidCallback onReset;
+  final VoidCallback onStartPause;
+
+  const TimerControls({
+    Key? key,
+    required this.isRunning,
+    required this.onReset,
+    required this.onStartPause,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -19,9 +23,7 @@ class TimerControls extends StatelessWidget {
           onPressed: onReset,
           color: mediumGrey,
         ),
-        const SizedBox(
-          width: 60,
-        ),
+        const SizedBox(width: 60),
         _buildControlButton(
           icon: isRunning ? Icons.pause_rounded : Icons.play_arrow_rounded,
           onPressed: onStartPause,
@@ -39,16 +41,16 @@ class TimerControls extends StatelessWidget {
     return GestureDetector(
       onTap: onPressed,
       child: Container(
-        width: 70,
         height: 70,
+        width: 70,
         decoration: BoxDecoration(
           color: color,
           shape: BoxShape.circle,
         ),
         child: Icon(
           icon,
-          color: lightWhite,
           size: 35,
+          color: lightWhite,
         ),
       ),
     );

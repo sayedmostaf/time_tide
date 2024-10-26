@@ -4,16 +4,16 @@ import 'package:flutter/material.dart';
 
 class TimerProvider extends ChangeNotifier {
   int _remainingTime = 0;
-  int _intialTime = 0;
+  int _initialTime = 0;
   Timer? _timer;
   bool _isRunning = false;
 
   int get remainingTime => _remainingTime;
-  int get intialTime => _intialTime;
+  int get initialTime => _initialTime;
   bool get isRunning => _isRunning;
 
   void startTimer() {
-    if (_timer != null || remainingTime == 0) return;
+    if (_timer != null || _remainingTime == 0) return;
 
     _isRunning = true;
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
@@ -47,7 +47,7 @@ class TimerProvider extends ChangeNotifier {
 
   void setTime(int seconds) {
     _remainingTime = seconds;
-    _intialTime = seconds;
+    _initialTime = seconds;
     notifyListeners();
   }
 }

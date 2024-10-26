@@ -1,10 +1,8 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:time_tide/clock_view.dart';
 import 'package:time_tide/constants/colors.dart';
-import 'package:time_tide/widgets/page_header.dart';
 
 class ClockPage extends StatefulWidget {
   const ClockPage({super.key});
@@ -21,9 +19,11 @@ class _ClockPageState extends State<ClockPage> {
   void initState() {
     super.initState();
     timer = Timer.periodic(const Duration(seconds: 1), (timer) {
-      setState(() {
-        dateTimeNow = DateTime.now();
-      });
+      if (mounted) {
+        setState(() {
+          dateTimeNow = DateTime.now();
+        });
+      }
     });
   }
 
@@ -40,6 +40,7 @@ class _ClockPageState extends State<ClockPage> {
     var timezoneString = dateTimeNow.timeZoneOffset.toString().split('.').first;
     var offsetSign = '';
     if (!timezoneString.startsWith('-')) offsetSign = '+';
+
     return Container(
       alignment: Alignment.center,
       padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 64),

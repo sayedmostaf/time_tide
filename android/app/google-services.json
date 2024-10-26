@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:804265617466:android:56fb724ca386f56d112d03",
         "android_client_info": {
-          "package_name": "com.android.app"
+          "package_name": "com.example.time_tide"
         }
       },
       "oauth_client": [],

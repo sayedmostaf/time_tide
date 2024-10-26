@@ -1,12 +1,14 @@
-import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:dotted_border/dotted_border.dart';
 import 'package:time_tide/constants/colors.dart';
+import 'package:time_tide/widgets/add_alarm.dart';
 
 class AddAlarmButton extends StatelessWidget {
-  const AddAlarmButton({super.key});
+  const AddAlarmButton({Key? key}) : super(key: key);
 
   @override
+
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 18),
@@ -18,13 +20,19 @@ class AddAlarmButton extends StatelessWidget {
         dashPattern: const [5, 4],
         child: CupertinoButton(
           padding: EdgeInsets.zero,
+          onPressed: () {
+            addAlarm(context);
+          },
           child: Container(
             width: double.infinity,
             decoration: BoxDecoration(
               color: darkBlue,
               borderRadius: BorderRadius.circular(24),
             ),
-            padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 20),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 32,
+              vertical: 20,
+            ),
             child: Column(
               children: [
                 Image.asset(
@@ -32,17 +40,16 @@ class AddAlarmButton extends StatelessWidget {
                   scale: 1.5,
                 ),
                 const SizedBox(height: 10),
-                Text(
+                const Text(
                   'Add Alarm',
                   style: TextStyle(
-                    fontWeight: FontWeight.w700,
                     color: Colors.white,
+                    fontWeight: FontWeight.w700,
                   ),
                 ),
               ],
             ),
           ),
-          onPressed: addAlarm(context),
         ),
       ),
     );

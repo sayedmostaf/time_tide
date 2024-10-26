@@ -1,12 +1,15 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:time_tide/clock_view.dart';
+import 'package:time_tide/firebase_options.dart';
 import 'package:time_tide/models/menu_info.dart';
 import 'package:time_tide/models/menu_type.dart';
 import 'package:time_tide/pages/home_page.dart';
 import 'package:time_tide/providers/timer_provider.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }
 
@@ -27,7 +30,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(fontFamily: 'Garet'),
-        home: const HomePage(),
+        home: HomePage(),
       ),
     );
   }
